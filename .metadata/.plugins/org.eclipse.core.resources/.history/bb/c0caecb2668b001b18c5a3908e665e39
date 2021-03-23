@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Saltos {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		String nome = scan.nextLine();
+		float distancias[] = new float[5];
+		
+		for (int i=0; i<distancias.length; i++) {
+			System.out.print("Salto " + (i+1) + ": ");
+			distancias[i] = scan.nextFloat();
+		}
+		
+		for (int i=0; i<distancias.length; i++) {
+			String out = "";
+			if (i==0)  out = "Saltos: "; 
+			out += distancias[i];
+			if(i!=distancias.length-1) out += " - ";
+			System.out.print(out);
+		}
+
+		
+		scan.close();
+	}
+
+}

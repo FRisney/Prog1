@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Eleicao {
+
+	public static void main(String[] args) {
+		// Declaracoes
+		class Candidato{
+			String nome;
+			int votos;
+		}
+		Scanner scan = new Scanner(System.in);
+		int opc = 0;
+		int total = 0;
+		Candidato candidatos[] = new Candidato[6];
+		
+		// Nomes dos candidatos
+		candidatos[0].nome = "Candidato 1";
+		candidatos[1].nome = "Candidato 2";
+		candidatos[2].nome = "Candidato 3";
+		candidatos[3].nome = "Candidato 4";
+		candidatos[4].nome = "Nulo";
+		candidatos[5].nome = "Em Branco";
+		
+		// Entrada de dados
+		do {
+			opc = scan.nextInt();
+			candidatos[opc+1].votos++;
+			total++;
+		}while(opc!=0);
+		
+		//Calculos
+
+		
+		// Saida de dados
+		for (int i=0; i< candidatos.length; i++) {
+			
+		}
+	}// fim main()
+
+}

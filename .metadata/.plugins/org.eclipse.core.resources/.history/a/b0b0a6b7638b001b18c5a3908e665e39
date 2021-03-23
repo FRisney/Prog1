@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Calculadora{
+    public static void main(String args[]){
+        Scanner scan = new Scanner(System.in);
+        Integer a = scan.nextInt();
+        Integer b = scan.nextInt();
+        mostra('+',a,b);
+        mostra('-',a,b);
+        mostra('*',a,b);
+        mostra('/',a,b);
+        scan.close();
+    }
+    public static void mostra(char op, int a, int b) {
+    	int res = 0;
+    	switch(op) {
+    	case '+': res = adicao(a,b); break;
+    	case '-': res = subtracao(a,b); break;
+    	case '*': res = multiplicacao(a,b); break;
+    	case '/': res = divisao(a,b); break;
+    	default: return;
+    	}
+    	String out = String.format("%d %c %d = %d", a, op, b, res);
+    	System.out.println(out);
+    }
+    public static int adicao(int a, int b) {
+    	return a + b;
+    }
+    public static int subtracao(int a, int b) {
+    	return a - b;
+    }
+    public static int multiplicacao(int a, int b) {
+    	return a * b;
+    }
+    public static int divisao(int a, int b) {
+    	return a / b;
+    }
+}
