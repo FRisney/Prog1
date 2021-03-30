@@ -9,10 +9,10 @@ public class Eleicao {
 			int votos;
 			public Candidato(String nome){ this.nome = nome;}
 		}
-		Scanner scan = new Scanner(System.in);
-		int opc = 0;
-		int total = 0;
+		
 		Candidato candidatos[] = new Candidato[6];
+		Scanner scan = new Scanner(System.in);
+		int opc = 0, total = 0;
 		
 		// Nomes dos candidatos
 		candidatos[0] = new Candidato("Candidato 1");
@@ -26,18 +26,15 @@ public class Eleicao {
 		while(true) {
 			System.out.print("Candidato > ");
 			opc = scan.nextInt();
-			if (opc != 0) { 
-				candidatos[opc-1].votos++;
-				total++;
-			}
-			else
-				break;
+			if (opc == 0) break;
+			candidatos[opc-1].votos++;
+			total++;
 		}
 		
 		// Saida de dados
-		for (int i=0; i< candidatos.length; i++) {
+		for (int i=0; i< candidatos.length; i++)
 			System.out.println("O " + candidatos[i].nome + " teve " + candidatos[i].votos + " votos");
-		}
+		
 		System.out.printf("%.2f%% dos votos foram nulos\n", (float)candidatos[4].votos/total*100);
 		System.out.printf("%.2f%% dos votos foram em branco\n", (float)candidatos[5].votos/total*100);
 		scan.close();
