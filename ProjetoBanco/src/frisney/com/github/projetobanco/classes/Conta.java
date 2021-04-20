@@ -2,8 +2,8 @@ package frisney.com.github.projetobanco.classes;
 
 public class Conta {
 	public boolean log;
-	private String  id;
-	private String  nome;
+	protected String  id;
+	protected String  nome;
 	/*
 	 * Saldo em centavos
 	 */
@@ -73,6 +73,15 @@ public class Conta {
 		log = true;
 		System.out.printf("Transferencia de R$%.2f efetuada com sucesso!\n", reais);
 		return true;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder str = new StringBuilder();
+		str.append("Conta " + this.id + "\n");
+		str.append("Nome " + this.nome + "\n");
+		str.append("Saldo " + this.saldo/100 + "\n");
+		return str.toString();
 	}
 	
 }
