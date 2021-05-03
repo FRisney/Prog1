@@ -13,14 +13,14 @@ public class App {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		List<Conta> contas = new ArrayList<Conta>();
-		
+
 		criaConta(scan,contas);
-		
+
 		do {
 			float vlr = 0f;
 			System.out.print("digite a conta ");
 			int cnt = scan.nextInt() - 1;
-			if (cnt < 0 || cnt >= contas.size()) { 
+			if (cnt < 0 || cnt >= contas.size()) {
 				System.out.println("Nao ha uma conta " + (cnt+1));
 				break;
 			}
@@ -30,7 +30,7 @@ public class App {
 				System.out.print("digite o valor ");
 				vlr = scan.nextFloat();
 			}
-			switch(opc) { 
+			switch(opc) {
 				case 1:
 					contas.get(cnt).extrato();
 					break;
