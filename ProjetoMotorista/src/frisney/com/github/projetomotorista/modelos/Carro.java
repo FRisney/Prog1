@@ -2,7 +2,7 @@ package frisney.com.github.projetomotorista.modelos;
 
 public class Carro {
 	private Integer ano;
-	private String  cambioAutomático;
+	private String  cambioAutomatico;
 	private String  chassi;
 	private String  cor;
 	private String  marca;
@@ -13,15 +13,15 @@ public class Carro {
 	private Boolean tetoSolar;
 	private Integer velocidadeAtual;
 	private Integer velocidadeMaxima;
-	private String  volumeCombustível;
+	private String  volumeCombustivel;
 	
 	// Getters and Setters
 
 	public Integer getAno() { return ano; }
 	public void setAno(Integer ano) { this.ano = ano; }
 
-	public String getCambioAutomático() { return cambioAutomático; }
-	public void setCambioAutomático(String cambioAutomático) { this.cambioAutomático = cambioAutomático; }
+	public String getCambioAutomático() { return cambioAutomatico; }
+	public void setCambioAutomático(String cambioAutomatico) { this.cambioAutomatico = cambioAutomatico; }
 
 	public String getChassi() { return chassi; }
 	public void setChassi(String chassi) { this.chassi = chassi; }
@@ -53,7 +53,7 @@ public class Carro {
 	public Integer getVelocidadeMaxima() { return velocidadeMaxima; }
 	public void setVelocidadeMaxima(Integer velocidadeMaxima) { this.velocidadeMaxima = velocidadeMaxima; }
 
-	public String getVolumeCombustível() { return volumeCombustível; }
-	public void setVolumeCombustível(String volumeCombustível) { this.volumeCombustível = volumeCombustível; }
+	public String getVolumeCombustivel() { return volumeCombustivel; }
+	public void setVolumeCombustivel(String volumeCombustivel) { this.volumeCombustivel = volumeCombustivel; }
 
 }
