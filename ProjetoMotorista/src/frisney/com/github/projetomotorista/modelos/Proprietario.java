@@ -2,8 +2,8 @@ package frisney.com.github.projetomotorista.modelos;
 
 public class Proprietario {
 	private String nome;
-	private Integer cpf;
-	private Integer rg;
+	private String cpf;
+	private String rg;
 	private String nascimento;
 	private String rua;
 	private String bairro;
@@ -12,20 +12,22 @@ public class Proprietario {
 	private String cep;
 	private String complemento;
 	
-	public Proprietario(String nome, Integer cpf, Integer rg) {
+	public Proprietario(String nome, String cpf, String rg) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.rg = rg;
 	}
+	
+	// Getters and Setters
 
 	public String getNome() { return nome; }
 	public void setNome(String nome) { this.nome = nome; }
 	
-	public Integer getCpf() { return cpf; }
-	public void setCpf(Integer cpf) { this.cpf = cpf; }
+	public String getCpf() { return cpf; }
+	public void setCpf(String cpf) { this.cpf = cpf; }
 	
-	public Integer getRg() { return rg; }
-	public void setRg(Integer rg) { this.rg = rg; }
+	public String getRg() { return rg; }
+	public void setRg(String rg) { this.rg = rg; }
 	
 	public String getNascimento() { return nascimento; }
 	public void setNascimento(String nascimento) { this.nascimento = nascimento; }
