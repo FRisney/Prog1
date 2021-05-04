@@ -2,12 +2,19 @@ package frisney.com.github.projetomotorista;
 
 import frisney.com.github.projetomotorista.modelos.Proprietario;
 import frisney.com.github.projetomotorista.modelos.Carro;
+import frisney.com.github.projetomotorista.modelos.Endereco;
 
 public class Main {
 
 	public static void main(String[] args) {
 
 		Proprietario prop = new Proprietario("Proprietario 1","12345678901","12345678");
+
+		Endereco end = new Endereco();
+		end.setRua("Rua dos Atoleiros");
+
+		prop.setEndereco(end);
+
 		Carro carro = new Carro(prop);
 
 		System.out.println("Velocidade Maxima: " + carro.getVelocidadeMaxima());
@@ -31,6 +38,7 @@ public class Main {
 			System.out.println("Marcha: " + carro.getMarcha());
 			System.out.println("Velocidade: " + carro.getVelocidadeAtual());
 		}
+		System.out.println(prop.getEndereco().toString());
 	}
 
 }
