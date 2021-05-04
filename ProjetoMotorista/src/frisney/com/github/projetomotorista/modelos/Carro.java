@@ -6,15 +6,52 @@ public class Carro {
 	private String  chassi;
 	private String  cor;
 	private String  marca;
-	private String  marchas;
+	private Integer marchas;
 	private String  modelo;
 	private Integer numeroPortas;
 	private Proprietario  proprietario;
 	private Boolean tetoSolar;
 	private Integer velocidadeAtual;
 	private Integer velocidadeMaxima;
-	private String  volumeCombustivel;
-	
+	private Integer volumeCombustivel;
+	private Integer marcha;
+
+	public Carro(Proprietario prop) {
+		this.proprietario = prop;
+		this.ano = 0;
+		this.velocidadeMaxima = 100;
+		this.velocidadeAtual = 0;
+		this.volumeCombustivel = 0;
+		this.marcha = 0;
+		this.marchas = 6;
+		this.numeroPortas = 2;
+		this.chassi = "0";
+		this.modelo = "0";
+		this.cor = "0";
+		this.marca = "0";
+		this.cambioAutomatico = "N";
+		this.tetoSolar = false;
+	}
+
+	public void acelera() {
+		if (this.velocidadeAtual + 1 <= this.velocidadeMaxima)
+			this.velocidadeAtual += 1;
+	}
+
+	public void freia() {
+		this.velocidadeAtual = 0;
+	}
+
+	public void trocaMarcha() {
+		if (this.marcha + 1 <= this.marchas)
+			this.marcha += 1;
+	}
+
+	public void reduzMarcha() {
+		if ((this.marcha == 1 && this.velocidadeAtual == 0) || this.marcha - 1 >= 1)
+			this.marcha -= 1;
+	}
+
 	// Getters and Setters
 
 	public Integer getAno() { return ano; }
@@ -32,8 +69,8 @@ public class Carro {
 	public String getMarca() { return marca; }
 	public void setMarca(String marca) { this.marca = marca; }
 
-	public String getMarchas() { return marchas; }
-	public void setMarchas(String marchas) { this.marchas = marchas; }
+	public Integer getMarchas() { return marchas; }
+	public void setMarchas(Integer marchas) { this.marchas = marchas; }
 
 	public String getModelo() { return modelo; }
 	public void setModelo(String modelo) { this.modelo = modelo; }
@@ -53,7 +90,10 @@ public class Carro {
 	public Integer getVelocidadeMaxima() { return velocidadeMaxima; }
 	public void setVelocidadeMaxima(Integer velocidadeMaxima) { this.velocidadeMaxima = velocidadeMaxima; }
 
-	public String getVolumeCombustivel() { return volumeCombustivel; }
-	public void setVolumeCombustivel(String volumeCombustivel) { this.volumeCombustivel = volumeCombustivel; }
+	public Integer getVolumeCombustivel() { return volumeCombustivel; }
+	public void setVolumeCombustivel(Integer volumeCombustivel) { this.volumeCombustivel = volumeCombustivel; }
+
+	public Integer getMarcha() { return marcha; }
+	public void setMarcha(Integer marcha) { this.marcha = marcha; }
 
 }
