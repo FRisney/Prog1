@@ -1,5 +1,7 @@
 package frisney.com.github.projetomotorista;
 
+import java.util.Scanner;
+
 import frisney.com.github.projetomotorista.modelos.Proprietario;
 import frisney.com.github.projetomotorista.modelos.Carro;
 import frisney.com.github.projetomotorista.modelos.Endereco;
@@ -7,6 +9,8 @@ import frisney.com.github.projetomotorista.modelos.Endereco;
 public class Main {
 
 	public static void main(String[] args) {
+
+		Scanner scan = new Scanner(System.in);
 
 		Proprietario prop = new Proprietario("Proprietario 1","12345678901","12345678");
 
@@ -39,6 +43,7 @@ public class Main {
 			System.out.println("Velocidade: " + carro.getVelocidadeAtual());
 		}
 		System.out.println(prop.getEndereco().toString());
+		scan.close();
 	}
 
 }
