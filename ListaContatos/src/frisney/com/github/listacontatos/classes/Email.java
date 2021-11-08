@@ -1,8 +1,6 @@
 package frisney.com.github.listacontatos.classes;
 
-import frisney.com.github.listacontatos.interfaces.IRecuperavel;
-
-public class Email extends Identificacao implements IRecuperavel {
+public class Email {
 
     private String endereco;
 
@@ -14,12 +12,10 @@ public class Email extends Identificacao implements IRecuperavel {
         this.endereco = args[0];
     }
 
-    @Override
     public String recupera() {
         return endereco;
     }
 
-    @Override
     public String recupera(String info) {
         if (info.equals("endereco"))
             return endereco;

@@ -1,72 +1,67 @@
 package frisney.com.github.listacontatos.classes;
 
-import frisney.com.github.listacontatos.interfaces.IRecuperavel;
+import frisney.com.github.listacontatos.enums.TipoInfo;
 
-import java.util.ArrayList;
+public class Contato {
+    private final String nome;
+    private final String sobrenome;
+    private String observacao;
+    private Email email;
+    private Endereco endereco;
+    private Telefone telefone;
 
-public class Contato implements IRecuperavel {
-    private String nome;
-    private String sobrenome;
-    private String empresa;
-    private String descricao;
-    private ArrayList<Email>    emails;
-    private ArrayList<Endereco> enderecos;
-    private ArrayList<Telefone> telefones;
-
-    public Contato(String nome){
+    public Contato(String nome, String sobrenome) {
         this.nome = nome;
+        this.sobrenome = sobrenome;
     }
 
-    @Override
     public String recupera() {
         StringBuilder ret = new StringBuilder();
         ret.append(nome).append(' ').append(sobrenome).append('\n');
-        ret.append(empresa).append('\n');
-        ret.append(descricao).append('\n');
+        ret.append(observacao).append('\n');
         ret.append("----").append('\n');
-        for (Telefone tel :
-                this.telefones) {
-            ret.append(tel.recupera());
-        }
+        ret.append(getTelefone());
         ret.append('\n');
-        for (Email email :
-                this.emails) {
-            ret.append(email.recupera());
-        }
+        ret.append(getEmail());
         ret.append('\n');
-        for (Endereco end :
-                this.enderecos) {
-            ret.append(end.recupera());
-        }
+        ret.append(getEndereco());
         return ret.toString();
     }
 
-    @Override
-    public String recupera(String info) {
-        return switch (info) {
-            case "enderecos" -> enderecos.toString();
-            case "telefones" -> telefones.toString();
-            case "emails" ->    emails.toString();
-            default -> recupera();
-        };
+    public String getEndereco(){
+        return endereco.recupera();
     }
 
-    public boolean addInfo(String info, String[] args) {
-        switch (info) {
-            case "endereco" -> {
-                Endereco endereco = new Endereco(args);
-                enderecos.add(endereco);
-                }
-            case "telefones" -> {
-                Telefone tel = new Telefone(args);
-                telefones.add(tel);
-            }
-            case "emails" -> {
-                Email email = new Email(args);
-                emails.add(email);
-            }
-        }
-        return true;
+    public String getTelefone(){
+        return telefone.recupera();
+    }
+
+    public String getEmail(){
+        return email.recupera();
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setInfo(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public void setInfo(Telefone tel) {
+        this.telefone = tel;
+    }
+
+    public void setInfo(Email email) {
+        this.email = email;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
     }
 
 }
