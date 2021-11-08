@@ -16,28 +16,24 @@ public class Contato {
     }
 
     public String recupera() {
-        StringBuilder ret = new StringBuilder();
-        ret.append(nome).append(' ').append(sobrenome).append('\n');
-        ret.append(observacao).append('\n');
-        ret.append("----").append('\n');
-        ret.append(getTelefone());
-        ret.append('\n');
-        ret.append(getEmail());
-        ret.append('\n');
-        ret.append(getEndereco());
-        return ret.toString();
+        return nome + ' ' + sobrenome + '\n' +
+                ((observacao != null) ? observacao : "") + '\n' +
+                "----" + '\n' +
+                getTelefone() + '\n' +
+                getEmail() + '\n' +
+                getEndereco() + '\n';
     }
 
     public String getEndereco(){
-        return endereco.recupera();
+        return (endereco != null) ? endereco.recupera() : "";
     }
 
     public String getTelefone(){
-        return telefone.recupera();
+        return (telefone != null) ? telefone.recupera() : "";
     }
 
     public String getEmail(){
-        return email.recupera();
+        return (email != null) ? email.recupera() : "";
     }
 
     public String getNome() {
