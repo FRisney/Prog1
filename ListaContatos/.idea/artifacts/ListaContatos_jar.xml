@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ListaContatos:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ListaContatos_jar</output-path>
+    <root id="archive" name="ListaContatos.jar">
+      <element id="module-output" name="ListaContatos" />
+    </root>
+  </artifact>
+</component>
